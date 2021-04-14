@@ -66,6 +66,9 @@ public class Igra {
 		naPotezi = Igralec.O;
 	}
 	
+	public Polje[][] getPlosca () {
+		return plosca;
+	}
 
 	/**
 	 * @return seznam možnih potez
