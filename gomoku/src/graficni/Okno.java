@@ -40,14 +40,14 @@ public class Okno extends JFrame implements ActionListener{
 		 */
 		public Okno() {
 			
-			this.setTitle("Tic tac toe");
+			this.setTitle("Gomoku");
 			this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 			this.setLayout(new GridBagLayout());
 		
 			// menu
 			JMenuBar menu_bar = new JMenuBar();
 			this.setJMenuBar(menu_bar);
-			JMenu igra_menu = new JMenu("Nova igra");
+			JMenu igra_menu = new JMenu("Tip igre");
 			menu_bar.add(igra_menu);
 
 			igraClovekRacunalnik = new JMenuItem("Človek – računalnik");
