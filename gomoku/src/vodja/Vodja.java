@@ -1,8 +1,6 @@
 package vodja;
 
-import java.util.Random;
 import java.util.Map;
-import java.util.List;
 
 import javax.swing.SwingWorker;
 
@@ -13,7 +11,13 @@ import java.util.concurrent.TimeUnit;
 //import graficni.Okno;
 import logika.Igra;
 import logika.Igralec;
-import logika.Koordinati;
+
+import splosno.Koordinati;
+import splosno.KdoIgra;
+
+import inteligenca.Inteligenca;
+import inteligenca.Minimax;
+import inteligenca.RandomMinimax;
 
 public class Vodja {	
 	
@@ -38,7 +42,7 @@ public class Vodja {
 		case NEODLOCENO: 
 			return; // odhajamo iz metode igramo
 		case V_TEKU: 
-			Igralec igralec = igra.naPotezi;
+			Igralec igralec = igra.naPotezi();
 			VrstaIgralca vrstaNaPotezi = vrstaIgralca.get(igralec);
 			switch (vrstaNaPotezi) {
 			case C: 
@@ -51,7 +55,7 @@ public class Vodja {
 		}
 	}
 	
-	private static Random random = new Random ();
+	public static Inteligenca racunalnikovaInteligenca = new Minimax(3);
 	
 //	public static void igrajRacunalnikovoPotezo() {
 //		List<Koordinati> moznePoteze = igra.poteze();
@@ -67,10 +71,9 @@ public class Vodja {
 		SwingWorker<Koordinati, Void> worker = new SwingWorker<Koordinati, Void> () {
 			@Override
 			protected Koordinati doInBackground() {
-				//try {TimeUnit.SECONDS.sleep(0.02);} catch (Exception e) {};
-				List<Koordinati> moznePoteze = igra.poteze();
-				int randomIndex = random.nextInt(moznePoteze.size());
-				return moznePoteze.get(randomIndex);
+				Koordinati poteza = racunalnikovaInteligenca.izberiPotezo(igra);
+				try {TimeUnit.SECONDS.sleep(1);} catch (Exception e) {};
+				return poteza;
 			}
 			@Override
 			protected void done () {

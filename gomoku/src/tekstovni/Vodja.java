@@ -10,7 +10,8 @@ import java.util.List;
 
 import logika.Igra;
 import logika.Igralec;
-import logika.Koordinati;
+
+import splosno.Koordinati;
 
 public class Vodja {
 	
@@ -64,7 +65,7 @@ public class Vodja {
 					System.out.println("Igra je neodločena");
 					break igranje;
 				case V_TEKU: 
-					Igralec igralec = igra.naPotezi;
+					Igralec igralec = igra.naPotezi();
 					VrstaIgralca vrstaNaPotezi = vrstaIgralca.get(igralec);
 					Koordinati poteza = null;
 					switch (vrstaNaPotezi) {
@@ -93,7 +94,7 @@ public class Vodja {
 	
 	public static Koordinati clovekovaPoteza(Igra igra) throws IOException {
 		while (true) {
-			System.out.println("Igralec " + igra.naPotezi.toString() +
+			System.out.println("Igralec " + igra.naPotezi().toString() +
 					" vnesite potezo \"x y\"");
 			String s = r.readLine();
 			int i = s.indexOf (' '); // kje je presledek

@@ -3,6 +3,8 @@ package logika;
 import java.util.LinkedList;
 import java.util.List;
 
+import splosno.Koordinati;
+
 public class Igra {
 
 	
@@ -11,7 +13,7 @@ public class Igra {
 	public static final int M = 5;
 	
 	// Pomožen seznam vseh vrstah na plošči.
-	private static final List<Vrsta> VRSTE = new LinkedList<Vrsta>();
+	public static final List<Vrsta> VRSTE = new LinkedList<Vrsta>();
 
 	static {
 		// Ta koda se izvede na začetku, ko se prvič požene program.
@@ -50,7 +52,7 @@ public class Igra {
 		
 	// Igralec, ki je trenutno na potezi.
 	// Vrednost je poljubna, če je igre konec (se pravi, lahko je napačna).
-	public Igralec naPotezi;
+	private Igralec naPotezi;
 
 
 	/**
@@ -66,8 +68,28 @@ public class Igra {
 		naPotezi = Igralec.O;
 	}
 	
-	public Polje[][] getPlosca () {
+	public Igra(Igra igra) {
+		this.plosca = new Polje[N][N];
+		for (int i = 0; i < N; i++) {
+			for (int j = 0; j < N; j++) {
+				this.plosca[i][j] = igra.plosca[i][j];
+			}
+		}
+		this.naPotezi = igra.naPotezi;
+	}
+	
+	/**
+	 * @return igralna plosca
+	 */
+	public Polje[][] getPlosca() {
 		return plosca;
+	}
+	
+	/**
+	 * @return igralec, ki je na potezi
+	 */
+	public Igralec naPotezi() {
+		return naPotezi;
 	}
 
 	/**

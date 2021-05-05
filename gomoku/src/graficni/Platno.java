@@ -15,7 +15,8 @@ import vodja.Vodja;
 import logika.Igra;
 import logika.Polje;
 import logika.Vrsta;
-import logika.Koordinati;;
+
+import splosno.Koordinati;;
 
 /**
  * Pravokotno območje, v katerem je narisano igralno polje.
