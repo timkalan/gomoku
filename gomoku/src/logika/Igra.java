@@ -9,8 +9,8 @@ public class Igra {
 
 	
 	// Velikost igralne pološče je N x N.
-	public static final int N = 15;
-	public static final int M = 5;
+	public static final int N = 8;
+	public static final int M = 3;
 	
 	// Pomožen seznam vseh vrstah na plošči.
 	public static final List<Vrsta> VRSTE = new LinkedList<Vrsta>();
