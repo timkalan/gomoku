@@ -50,19 +50,19 @@ public class Okno extends JFrame implements ActionListener{
 			JMenu igra_menu = new JMenu("Tip igre");
 			menu_bar.add(igra_menu);
 
-			igraClovekRacunalnik = new JMenuItem("Človek – računalnik");
+			igraClovekRacunalnik = new JMenuItem("človek – računalnik");
 			igra_menu.add(igraClovekRacunalnik);
 			igraClovekRacunalnik.addActionListener(this);
 			
-			igraRacunalnikClovek = new JMenuItem("Računalnik – človek");
+			igraRacunalnikClovek = new JMenuItem("računalnik – človek");
 			igra_menu.add(igraRacunalnikClovek);
 			igraRacunalnikClovek.addActionListener(this);
 			
-			igraClovekClovek = new JMenuItem("Človek – človek");
+			igraClovekClovek = new JMenuItem("človek – človek");
 			igra_menu.add(igraClovekClovek);
 			igraClovekClovek.addActionListener(this);
 			
-			igraRacunalnikRacunalnik = new JMenuItem("Računalnik – računalnik");
+			igraRacunalnikRacunalnik = new JMenuItem("računalnik – računalnik");
 			igra_menu.add(igraRacunalnikRacunalnik);
 			igraRacunalnikRacunalnik.addActionListener(this);
 

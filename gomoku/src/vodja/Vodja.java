@@ -8,16 +8,13 @@ import graficni.Okno;
 
 import java.util.concurrent.TimeUnit;
 
-//import graficni.Okno;
 import logika.Igra;
 import logika.Igralec;
 
 import splosno.Koordinati;
-import splosno.KdoIgra;
+//import splosno.KdoIgra;
 
 import inteligenca.Inteligenca;
-import inteligenca.Minimax;
-import inteligenca.RandomMinimax;
 
 public class Vodja {	
 	
@@ -55,7 +52,7 @@ public class Vodja {
 		}
 	}
 	
-	public static Inteligenca racunalnikovaInteligenca = new Minimax(3);
+	public static Inteligenca racunalnikovaInteligenca = new Inteligenca(3);
 	
 //	public static void igrajRacunalnikovoPotezo() {
 //		List<Koordinati> moznePoteze = igra.poteze();

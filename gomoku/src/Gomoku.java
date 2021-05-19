@@ -2,6 +2,7 @@
 import graficni.Okno;
 import vodja.Vodja;
 
+// razred, prek katerega poženemo aplikacijo
 public class Gomoku {
 	
 	public static void main(String[] args) {

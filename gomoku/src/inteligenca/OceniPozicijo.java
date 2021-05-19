@@ -7,7 +7,7 @@ import logika.Vrsta;
 
 public class OceniPozicijo {
 	
-	// Metoda oceniPozicijo za igro TicTacToe
+	// Hevristična funkcija za oceno pozicije.
 	
 	public static int oceniPozicijo(Igra igra, Igralec jaz) {
 		int ocena = 0;

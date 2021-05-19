@@ -5,14 +5,16 @@ import java.util.List;
 
 import splosno.Koordinati;
 
+// povzeto po datotekah s predavanj
 public class Igra {
 
 	
 	// Velikost igralne pološče je N x N.
-	public static final int N = 8;
-	public static final int M = 3;
+	// Želimo M simbolov v vrsto.
+	public static final int N = 10;
+	public static final int M = 5;
 	
-	// Pomožen seznam vseh vrstah na plošči.
+	// Pomožen seznam vseh vrst na plošči.
 	public static final List<Vrsta> VRSTE = new LinkedList<Vrsta>();
 
 	static {
@@ -20,16 +22,21 @@ public class Igra {
 		// Njena naloga je, da inicializira vrednosti statičnih
 		// spremenljivk.
 		
-		// Iniciraliziramo N-vrste
+		// Z M x M kvadratom se sprehodimo čez N x N ploščo in shranjujemo M-vrste.
 		int[][] smer = {{1,0}, {0,1}, {1,1}, {1,-1}};
-		for (int i = 0; i<N-M;i++) {
-			for (int j = 0; j<N-M ;j++) {
+		
+		// Prvi zanki poskrbita da zamikamo M x M kvadrat čez celotno ploščo.
+		for (int i = 0; i<N-M+1;i++) {
+			for (int j = 0; j<N-M+1 ;j++) {
+				
+				// Te tri zanke so dejanki pregled M x M kvadrata.
 				for (int x = 0; x < M; x++) {
 					for (int y = 0; y < M; y++) {
 						for (int[] s : smer) {
 							int dx = s[0];
 							int dy = s[1];
-							// če je skrajno polje terice še na plošči, jo dodamo med terice
+							
+							// če je skrajno polje še na plošči, vrstica ustreza
 							if ((0 <= x + (M-1) * dx) && (x + (M-1) * dx < M) && 
 								(0 <= y + (M-1) * dy) && (y + (M-1) * dy < M)) {
 								int[] vrsta_x = new int[M];
@@ -68,6 +75,7 @@ public class Igra {
 		naPotezi = Igralec.O;
 	}
 	
+	// Ustvari kopijo dane igre.
 	public Igra(Igra igra) {
 		this.plosca = new Polje[N][N];
 		for (int i = 0; i < N; i++) {
@@ -100,6 +108,7 @@ public class Igra {
 		for (int i = 0; i < N; i++) {
 			for (int j = 0; j < N; j++) {
 				if (plosca[i][j] == Polje.PRAZNO) {
+					// možne poteze so prazna polja na plošči
 					ps.add(new Koordinati(i, j));
 				}
 			}
@@ -180,20 +189,4 @@ public class Igra {
 			return false;
 		}
 	}
-	
-	public String natisni() {
-		String natis = "\n";
-		for (int i = 0; i < N; i++) {
-			for (int j = 0;j < N; j++) {
-				if (plosca[i][j] == Polje.O) natis += "| O ";
-				else if (plosca[i][j] == Polje.X) natis += "| X ";
-				else natis += "| _ ";
-			}
-			natis += "| \n";
-		}
-	return natis;
-	}
-	
-	
-
 }
