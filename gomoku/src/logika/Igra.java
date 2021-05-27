@@ -11,7 +11,7 @@ public class Igra {
 	
 	// Velikost igralne pološče je N x N.
 	// Želimo M simbolov v vrsto.
-	public static final int N = 10;
+	public static final int N = 15;
 	public static final int M = 5;
 	
 	// Pomožen seznam vseh vrst na plošči.

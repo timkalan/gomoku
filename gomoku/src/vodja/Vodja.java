@@ -52,7 +52,7 @@ public class Vodja {
 		}
 	}
 	
-	public static Inteligenca racunalnikovaInteligenca = new Inteligenca(3);
+	public static Inteligenca racunalnikovaInteligenca = new Inteligenca(2);
 	
 //	public static void igrajRacunalnikovoPotezo() {
 //		List<Koordinati> moznePoteze = igra.poteze();

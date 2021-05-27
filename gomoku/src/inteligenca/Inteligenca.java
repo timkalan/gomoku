@@ -1,7 +1,7 @@
 package inteligenca;
 
 import java.util.List;
-import java.util.Random;
+//import java.util.Random;
 
 import logika.Igra;
 import logika.Igralec;
