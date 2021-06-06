@@ -25,7 +25,7 @@ import splosno.Koordinati;;
 public class Platno extends JPanel implements MouseListener {
 	
 	public Platno() {
-		setBackground(Color.WHITE);
+		setBackground(new Color(181, 101, 29));
 		this.addMouseListener(this);
 		
 	}
@@ -55,15 +55,15 @@ public class Platno extends JPanel implements MouseListener {
 	 * @param j
 	 */
 	private void paintX(Graphics2D g2, int i, int j) {
-		double w = squareWidth();
-		double r = w * (1.0 - LINE_WIDTH - 2.0 * PADDING); // sirina X
-		double x = w * (i + 0.5 * LINE_WIDTH + PADDING);
-		double y = w * (j + 0.5 * LINE_WIDTH + PADDING);
-		g2.setColor(Color.BLUE);
-		g2.setStroke(new BasicStroke((float) (w * LINE_WIDTH)));
-		g2.drawLine((int)x, (int)y, (int)(x + r), (int)(y + r));
-		g2.drawLine((int)(x + r), (int)y, (int)x, (int)(y + r));
-	}
+			double w = squareWidth();
+			double d = w * (1.0 - LINE_WIDTH - 2.0 * PADDING); // premer O
+			double x = w * (i + 0.5 * LINE_WIDTH + PADDING);
+			double y = w * (j + 0.5 * LINE_WIDTH + PADDING);
+			g2.setColor(Color.BLACK);
+			g2.setStroke(new BasicStroke((float) (w * LINE_WIDTH)));
+			g2.drawOval((int)x, (int)y, (int)d , (int)d);
+			g2.fillOval((int)x, (int)y, (int)d , (int)d);
+		}
 	
 	/**
 	 * V grafični kontekst {@g2} nariši križec v polje {@(i,j)}
@@ -76,9 +76,10 @@ public class Platno extends JPanel implements MouseListener {
 		double d = w * (1.0 - LINE_WIDTH - 2.0 * PADDING); // premer O
 		double x = w * (i + 0.5 * LINE_WIDTH + PADDING);
 		double y = w * (j + 0.5 * LINE_WIDTH + PADDING);
-		g2.setColor(Color.RED);
+		g2.setColor(Color.WHITE);
 		g2.setStroke(new BasicStroke((float) (w * LINE_WIDTH)));
 		g2.drawOval((int)x, (int)y, (int)d , (int)d);
+		g2.fillOval((int)x, (int)y, (int)d , (int)d);
 	}
 	
 	@Override
