@@ -125,16 +125,20 @@ public class Okno extends JFrame implements ActionListener{
 			else {
 				switch(Vodja.igra.stanje()) {
 				case NEODLOCENO: status.setText("Neodločeno!"); break;
-				case V_TEKU: 
-					status.setText("Na potezi je " + Vodja.igra.naPotezi() + 
-							" - " + Vodja.vrstaIgralca.get(Vodja.igra.naPotezi())); 
+				case V_TEKU:
+					if(Vodja.igra.naPotezi().equals(Igralec.O)) {
+						status.setText("Na potezi je beli" + //Vodja.igra.naPotezi() + 
+						" - " + Vodja.vrstaIgralca.get(Vodja.igra.naPotezi()));
+					}
+					else {status.setText("Na potezi je črni" + 
+							" - " + Vodja.vrstaIgralca.get(Vodja.igra.naPotezi()));};
 					break;
 				case ZMAGA_O: 
-					status.setText("Zmagal je O - " + 
+					status.setText("Zmagal je beli - " + 
 							Vodja.vrstaIgralca.get(Igralec.O));
 					break;
 				case ZMAGA_X: 
-					status.setText("Zmagal je X - " + 
+					status.setText("Zmagal je črni - " + 
 							Vodja.vrstaIgralca.get(Igralec.X));
 					break;
 				}
