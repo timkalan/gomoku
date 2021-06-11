@@ -16,7 +16,6 @@ public class OceniPozicijo {
 		}
 		return ocena;	
 	}
-	
 	public static int oceniVrsto (Vrsta v, Igra igra, Igralec jaz) {
 		Polje[][] plosca = igra.getPlosca();
 		int count_X = 0;
@@ -32,8 +31,6 @@ public class OceniPozicijo {
 		else if (jaz == Igralec.O) { return count_O - count_X; }
 		else { return count_X - count_O; }
 	}
-	
-
 }
 
 

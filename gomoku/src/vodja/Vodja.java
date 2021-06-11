@@ -30,7 +30,7 @@ public class Vodja {
 		igra = new Igra ();
 		igramo ();
 	}
-	
+	//Metoda, ki skrbi da igra teče
 	public static void igramo () {
 		okno.osveziGUI();
 		switch (igra.stanje()) {
@@ -54,26 +54,20 @@ public class Vodja {
 	
 	public static Inteligenca racunalnikovaInteligenca = new Inteligenca(2);
 	
-//	public static void igrajRacunalnikovoPotezo() {
-//		List<Koordinati> moznePoteze = igra.poteze();
-//		try {TimeUnit.SECONDS.sleep(2);} catch (Exception e) {};
-//		int randomIndex = random.nextInt(moznePoteze.size());
-//		Koordinati poteza = moznePoteze.get(randomIndex);
-//		igra.odigraj(poteza);
-//		igramo ();
-//	}
-	
+	//Uporaba niti za določanje računalnikove poteze v ozadju
 	public static void igrajRacunalnikovoPotezo() {
 		Igra zacetkaIgra = igra;
 		SwingWorker<Koordinati, Void> worker = new SwingWorker<Koordinati, Void> () {
 			@Override
 			protected Koordinati doInBackground() {
+				//Tu računalnik oceni svojo najboljšo potezo
 				Koordinati poteza = racunalnikovaInteligenca.izberiPotezo(igra);
-				try {TimeUnit.SECONDS.sleep(0);} catch (Exception e) {};
+				try {TimeUnit.SECONDS.sleep(1);} catch (Exception e) {};
 				return poteza;
 			}
 			@Override
 			protected void done () {
+				//Ko se ocenjevanje konča jo odigra
 				Koordinati poteza = null;
 				try {poteza = get();} catch (Exception e) {};
 				if (igra == zacetkaIgra) {

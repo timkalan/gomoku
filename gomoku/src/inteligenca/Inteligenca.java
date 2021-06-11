@@ -8,8 +8,8 @@ import logika.Igralec;
 import splosno.Koordinati;
 import splosno.KdoIgra;
 
-// Implementiran naključni minimax
-// TODO: časovna omejitev - 5 sek
+// Implementiran Alpha beta
+
 public class Inteligenca extends KdoIgra {
 
 	private static final int ZMAGA = 100; // vrednost zmage
