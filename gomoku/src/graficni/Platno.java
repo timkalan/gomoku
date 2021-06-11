@@ -18,13 +18,15 @@ import logika.Vrsta;
 
 import splosno.Koordinati;;
 
-/**
+/*
  * Pravokotno območje, v katerem je narisano igralno polje.
  */
+
 @SuppressWarnings("serial")
 public class Platno extends JPanel implements MouseListener {
 	
 	public Platno() {
+		// Nastavimo barvo ozadja.
 		setBackground(new Color(181, 101, 29));
 		this.addMouseListener(this);
 		
@@ -93,7 +95,7 @@ public class Platno extends JPanel implements MouseListener {
 		Vrsta t = null;
 		if (Vodja.igra != null) {t = Vodja.igra.zmagovalnaVrsta();}
 		if (t != null) {
-			g2.setColor(new Color(255, 255, 196));
+			g2.setColor(new Color(237, 171, 111));
 			for (int k = 0; k < Igra.M; k++) {
 				int i = t.x[k];
 				int j = t.y[k];
@@ -115,7 +117,7 @@ public class Platno extends JPanel implements MouseListener {
 					    (int)(i * w));
 		}
 		
-		// križci in krožci
+		// krožci
 		Polje[][] plosca;;
 		if (Vodja.igra != null) {
 			plosca = Vodja.igra.getPlosca();
@@ -134,6 +136,7 @@ public class Platno extends JPanel implements MouseListener {
 	
 	@Override
 	public void mouseClicked(MouseEvent e) {
+		// Ob pritisku na miško se izvede poteza.
 		if (Vodja.clovekNaVrsti) {
 			int x = e.getX();
 			int y = e.getY();
@@ -150,6 +153,8 @@ public class Platno extends JPanel implements MouseListener {
 			}
 		}
 	}
+	
+	// Teh metod ne rabimo.
 
 	@Override
 	public void mousePressed(MouseEvent e) {		

@@ -50,6 +50,7 @@ public class Okno extends JFrame implements ActionListener{
 			JMenu igra_menu = new JMenu("Tip igre");
 			menu_bar.add(igra_menu);
 
+			// Možne izbure v drop-down meniju.
 			igraClovekRacunalnik = new JMenuItem("človek – računalnik");
 			igra_menu.add(igraClovekRacunalnik);
 			igraClovekRacunalnik.addActionListener(this);
@@ -117,13 +118,15 @@ public class Okno extends JFrame implements ActionListener{
 				Vodja.igramoNovoIgro();
 			}
 		}
-
+		
+		// Po vsakem dejanju je potrebno na novo narisati GUI.
 		public void osveziGUI() {
 			if (Vodja.igra == null) {
 				status.setText("Igra ni v teku.");
 			}
 			else {
 				switch(Vodja.igra.stanje()) {
+				// Različni izpisi glede na stanje.
 				case NEODLOCENO: status.setText("Neodločeno!"); break;
 				case V_TEKU:
 					if(Vodja.igra.naPotezi().equals(Igralec.O)) {

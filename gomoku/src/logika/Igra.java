@@ -5,12 +5,17 @@ import java.util.List;
 
 import splosno.Koordinati;
 
-// povzeto po datotekah s predavanj
+/*
+ * Povzeto po datotekah s predavanj.
+ */
+
 public class Igra {
 
 	
-	// Velikost igralne pološče je N x N.
-	// Želimo M simbolov v vrsto.
+	/**
+	 * Imamo N x N ploščo in želimo postaviti 
+	 * M simbolov v vrsto
+	 */
 	public static final int N = 15;
 	public static final int M = 5;
 	
@@ -53,6 +58,7 @@ public class Igra {
 			}
 		}
 	}
+	
 	// Igralno polje
 	private Polje[][] plosca;
 	
@@ -108,7 +114,7 @@ public class Igra {
 		for (int i = 0; i < N; i++) {
 			for (int j = 0; j < N; j++) {
 				if (plosca[i][j] == Polje.PRAZNO) {
-					// možne poteze so prazna polja na plošči
+					// Simbol lahko postavimo na vsa prazna polja.
 					ps.add(new Koordinati(i, j));
 				}
 			}
@@ -162,6 +168,7 @@ public class Igra {
 			case PRAZNO: assert false;
 			}
 		}
+		
 		// Ali imamo kakšno prazno polje?
 		// Če ga imamo, igre ni konec in je nekdo na potezi
 		for (int i = 0; i < N; i++) {

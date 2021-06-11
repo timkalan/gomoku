@@ -1,5 +1,10 @@
 package vodja;
 
+/*
+ * Razred za reprezentacijo naših dveh tipov igralca - 
+ * človeka in računalnika.
+ */
+
 public enum VrstaIgralca {
 	R, C; 
 

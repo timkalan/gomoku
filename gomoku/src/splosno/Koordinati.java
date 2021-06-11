@@ -1,5 +1,9 @@
 package splosno;
 
+/*
+ * Koordinati predstavimo kot par števil.
+ */
+
 public class Koordinati {
 	private int x;
 	private int y;

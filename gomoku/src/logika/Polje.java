@@ -1,6 +1,6 @@
 package logika;
 
-/**
+/*
  * Možne vrednosti polj na plošči.
  */
 

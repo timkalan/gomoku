@@ -8,7 +8,9 @@ import logika.Igralec;
 import splosno.Koordinati;
 import splosno.KdoIgra;
 
-// Implementiran Alpha beta
+/*
+ * Inteligenco predstavlja algoritem Alpha-beta.
+ */
 
 public class Inteligenca extends KdoIgra {
 
@@ -16,6 +18,7 @@ public class Inteligenca extends KdoIgra {
 	private static final int ZGUBA = -ZMAGA;  // vrednost izgube
 	private static final int NEODLOC = 0;  // vrednost neodločene igre	
 	
+	// Globina iskanja.
 	private int globina;
 	
 	public Inteligenca (int globina) {

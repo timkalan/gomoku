@@ -2,8 +2,8 @@ package logika;
 
 import java.util.Arrays;
 
-/**
- * Objekt, ki predstavlja M sosednjih polj, njihov pregled je zadosten za
+/*
+ * Objekt, ki predstavlja M sosednjih polj, pregled vseh je zadosten za
  * določitev zmagovalca.
  */
 public class Vrsta {
@@ -19,7 +19,7 @@ public class Vrsta {
 
 	@Override
 	public String toString() {
-		// lepši zipis vrste
+		// Lepši izpis vrste.
 		return "Vrsta [x=" + Arrays.toString(x) + ", y=" + Arrays.toString(y) + "]";
 	}
 }
